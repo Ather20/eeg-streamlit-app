@@ -3,11 +3,11 @@ import gdown
 import tensorflow as tf
 
 MODEL_ID = "1nxA4kol_CV1nifDcFeTu26D8iq_RMh53"
-MODEL_URL = f"https://drive.google.com/uc?export=download&id={MODEL_ID}"
+MODEL_URL = f"https://drive.google.com/uc?id={MODEL_ID}"
 MODEL_PATH = "best_eeg_model.keras"
 
 if not os.path.exists(MODEL_PATH):
-    gdown.download(MODEL_URL, MODEL_PATH, quiet=False, fuzzy=True)
+    gdown.download(MODEL_URL, MODEL_PATH, quiet=False)
 
 model = tf.keras.models.load_model(MODEL_PATH)
 
