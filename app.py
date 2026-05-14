@@ -1,5 +1,10 @@
 import gdown
 import os
+import tensorflow as tf
+
+# ==============================
+# Google Drive Model Download
+# ==============================
 
 MODEL_ID = "1nxA4kol_CV1nifDcFeTu26D8iq_RMh53"
 
@@ -10,6 +15,12 @@ MODEL_PATH = "best_eeg_model.keras"
 # تحميل المودل إذا غير موجود
 if not os.path.exists(MODEL_PATH):
     gdown.download(MODEL_URL, MODEL_PATH, quiet=False)
+
+# ==============================
+# Load Model
+# ==============================
+
+model = tf.keras.models.load_model(MODEL_PATH)
 
 import streamlit as st
 import tensorflow as tf
