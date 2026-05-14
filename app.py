@@ -1,11 +1,13 @@
 import gdown
 import os
 
-MODEL_ID = "1ADhTn3DtLvL-dskVXEJWK-iYgppMdd4s"
-MODEL_URL = f"https://drive.google.com/uc?id={MODEL_ID}"
-MODEL_PATH = "model.h5"
+MODEL_ID = "1nxA4kol_CV1nifDcFeTu26D8iq_RMh53"
 
-# Download the model if not exists
+MODEL_URL = f"https://drive.google.com/uc?id={MODEL_ID}"
+
+MODEL_PATH = "best_eeg_model.keras"
+
+# تحميل المودل إذا غير موجود
 if not os.path.exists(MODEL_PATH):
     gdown.download(MODEL_URL, MODEL_PATH, quiet=False)
 
